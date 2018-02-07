@@ -1,0 +1,25 @@
+{
+	"LogLevel": "debug",
+	"ServerMode": "debug",
+	"LogPath": "log",
+	"ServerAddr": "192.168.1.239",
+	"ServerPort": 8081,
+	"MysqlAddr": "127.0.0.1",
+	"MysqlPort": 3306,
+	"MysqlDb": "api_test",
+	"MysqlUserName": "root",
+	"MysqlPassword": "root",
+	"MysqlIdleConn": 4,
+	"MysqlMaxConn": 20,
+    "MongoHosts":"127.0.0.1:27017",
+    "MongoDb":"test",
+    "MongoUserName":"",
+    "MongoPassword":"",
+    "MongoPoolLimit": 4096,
+    "EmailHost":"smtp.mxhichina.com",
+    "EmailPort":"465",
+    "EmailUserName":"",
+    "EmailNickName":"",
+    "EmailPassword":""
+
+}

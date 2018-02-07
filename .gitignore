@@ -1,0 +1,18 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# idea:
+.cache
+.idea
+
+# project:
+/bin/log/*.log
+!/bin/log
+/bin/gin_log
+/bin/conf/server.json
+/pkg
+/src/github.com/xiaomeng79/gin_log/vendor/*
+!/src/github.com/xiaomeng79/gin_log/vendor/vendor.json
+
