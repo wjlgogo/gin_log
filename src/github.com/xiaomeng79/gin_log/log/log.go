@@ -8,7 +8,6 @@ import (
 	"path"
 	"strings"
 	"time"
-	"github.com/xiaomeng79/gin_log/libs"
 )
 
 // levels
@@ -32,6 +31,17 @@ type Logger struct {
 	baseFile   *os.File
 }
 
+func PathExists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
+}
+
 func New(strLevel string, pathname string, flag int) (*Logger, error) {
 	// level
 	var level int
@@ -52,7 +62,7 @@ func New(strLevel string, pathname string, flag int) (*Logger, error) {
 	var baseLogger *log.Logger
 	var baseFile *os.File
 	if pathname != "" {
-		if ok,_ := libs.PathExists(pathname); !ok {
+		if ok,_ := PathExists(pathname); !ok {
 			os.MkdirAll(pathname,0777)
 		}
 		now := time.Now()
