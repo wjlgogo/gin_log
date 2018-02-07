@@ -10,19 +10,19 @@
     
 - govendor sync
 
-    `$ cd src/github.com/xiaomeng79/git_log/ && govendor sync`
+    `$ cd src/github.com/xiaomeng79/gin_log/ && govendor sync`
     
 - go install
 
-    `cd ../../../ && go install github.com/xiaomeng79/git_log/`
+    `cd ../../../ && go install github.com/xiaomeng79/gin_log/`
     
 - config project
 
-    `mv bin/conf/server.json.bak bin/conf/server.json`
+    `cp bin/conf/server.json.bak bin/conf/server.json`
     
     `vi server.json`
     
 - start project
 
-    `nohub gin_log >> output.log 2>&1 &`
+    `nohup gin_log >> output.log 2>&1 &`
 
