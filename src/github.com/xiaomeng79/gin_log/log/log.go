@@ -8,6 +8,7 @@ import (
 	"path"
 	"strings"
 	"time"
+	"github.com/xiaomeng79/gin_log/libs"
 )
 
 // levels
@@ -51,6 +52,9 @@ func New(strLevel string, pathname string, flag int) (*Logger, error) {
 	var baseLogger *log.Logger
 	var baseFile *os.File
 	if pathname != "" {
+		if ok,_ := libs.PathExists(pathname); !ok {
+			os.MkdirAll(pathname,0777)
+		}
 		now := time.Now()
 
 		filename := fmt.Sprintf("%d%02d%02d_%02d_%02d_%02d.log",
